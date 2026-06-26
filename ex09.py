@@ -1,4 +1,7 @@
-def primos(n):
-    return [x for x in range(2, n+1) if all(x % d for d in range(2, x))]
+def tem_divisor(n):
+    return [d for d in range(2, n) if n % d == 0] == []
 
-print(primos(50))
+def primos(n):
+    return [x for x in range(2, n+1) if tem_divisor(x)]
+
+print(primos(int(input())))
